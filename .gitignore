@@ -1,0 +1,12 @@
+# Node & Environment
+node_modules/
+.env
+.env.local
+.DS_Store
+
+# Vercel
+.vercel/
+
+# Logs & Temp
+*.log
+npm-debug.log*

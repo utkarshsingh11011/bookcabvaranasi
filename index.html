@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Book Cab Varanasi - 5-Star Review Generator</title>
+    
+    <!-- SEO & Metadata -->
+    <meta name="description" content="Generate 5-star Google Maps reviews for BOOK CAB Varanasi. Select your vehicle (Innova Crysta, Ertiga, Tempo Traveller) & route (Ayodhya, Airport, Sightseeing).">
+    <meta name="keywords" content="Book Cab Varanasi, Varanasi Taxi Review, Innova Crysta Varanasi, Tempo Traveller Varanasi to Ayodhya, Kashi Vishwanath Darshan Cab">
+    <meta name="theme-color" content="#070A12">
+
+    <!-- OpenGraph / Social Cards -->
+    <meta property="og:title" content="Book Cab Varanasi - In-Ride Review Generator">
+    <meta property="og:description" content="Rate your trip in 1-click! Fast, natural Google Maps reviews for Book Cab Varanasi.">
+    <meta property="og:image" content="assets/google-review-qr.png">
+    <meta property="og:url" content="https://bookcabvaranasi.vercel.app">
+    <meta property="og:type" content="website">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="app-wrapper">
+        
+        <!-- Header Section -->
+        <header class="app-header">
+            <div class="brand-badge-container">
+                <span class="brand-pill">BOOK CAB VARANASI • IN-RIDE REVIEW</span>
+            </div>
+            <h1 class="app-title">Share Your <span>5-Star Journey</span></h1>
+            <p class="app-subtitle">Help future travelers find reliable cabs in Varanasi</p>
+
+            <div class="support-bar">
+                <div class="support-info">
+                    <span>🚖 Need Assistance?</span>
+                    <strong>Support: 9838409911</strong>
+                </div>
+                <a href="tel:9838409911" class="call-btn" id="call-support-btn">
+                    📞 Call Now
+                </a>
+            </div>
+        </header>
+
+        <!-- Step 1: Input Parameters -->
+        <section class="card-section" id="selection-card">
+            <div class="section-label">
+                <i>🚘</i> <span>1. Trip Details</span>
+            </div>
+
+            <!-- Vehicle Selection -->
+            <div class="input-group">
+                <label for="vehicle-select" class="field-label">Vehicle Roster</label>
+                <div class="custom-select-wrapper">
+                    <select id="vehicle-select" class="custom-select" aria-label="Select Vehicle Model">
+                        <!-- Options dynamically inserted via js/templates.js -->
+                    </select>
+                    <span class="select-arrow">▼</span>
+                </div>
+                <div class="pills-scroll" id="vehicle-pills">
+                    <!-- Quick vehicle pill buttons inserted dynamically -->
+                </div>
+            </div>
+
+            <!-- Route Selection -->
+            <div class="input-group">
+                <label for="route-select" class="field-label">High-Value Route</label>
+                <div class="custom-select-wrapper">
+                    <select id="route-select" class="custom-select" aria-label="Select Trip Route">
+                        <!-- Options dynamically inserted via js/templates.js -->
+                    </select>
+                    <span class="select-arrow">▼</span>
+                </div>
+                <div class="pills-scroll" id="route-pills">
+                    <!-- Quick route pill buttons inserted dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Step 2: Generated Review Card -->
+        <section class="card-section" id="review-card">
+            <div class="review-output-header">
+                <div class="section-label" style="margin-bottom: 0;">
+                    <i>📝</i> <span>2. Your Generated Review</span>
+                </div>
+                <span class="template-tag-badge" id="template-tag">Reliability & Comfort</span>
+            </div>
+
+            <!-- Interactive 5-Star Indicator -->
+            <div class="star-rating" id="star-rating" title="Rating: 5 Stars">
+                <span class="star" data-value="1">★</span>
+                <span class="star" data-value="2">★</span>
+                <span class="star" data-value="3">★</span>
+                <span class="star" data-value="4">★</span>
+                <span class="star" data-value="5">★</span>
+            </div>
+
+            <div class="review-textarea-wrapper" style="margin-top: 10px;">
+                <textarea id="review-textarea" class="review-textarea" placeholder="Your review text will appear here..." aria-label="Generated Review Content"></textarea>
+            </div>
+
+            <div class="review-actions-row">
+                <button type="button" class="shuffle-btn" id="shuffle-btn">
+                    <span>🔀 Shuffle Phrase</span>
+                </button>
+                <span class="char-counter" id="char-counter">0 characters</span>
+            </div>
+        </section>
+
+        <!-- Step 3: Visual Instructional Box -->
+        <div class="instruction-box" id="instruction-card">
+            <h3 class="instruction-title">
+                <span>✨</span> Your Review is Ready!
+            </h3>
+            <div class="steps-list">
+                <div class="step-item" id="step-1">
+                    <div class="step-icon-badge">📋</div>
+                    <div class="step-text-wrap">
+                        <strong>Step 1: Auto-Copying Text</strong>
+                        <span>Copies your custom review to phone clipboard</span>
+                    </div>
+                </div>
+                <div class="step-item" id="step-2">
+                    <div class="step-icon-badge">🗺️</div>
+                    <div class="step-text-wrap">
+                        <strong>Step 2: Opening Google Maps</strong>
+                        <span>Redirecting directly to Book Cab Varanasi review form</span>
+                    </div>
+                </div>
+                <div class="step-item" id="step-3">
+                    <div class="step-icon-badge">⭐</div>
+                    <div class="step-text-wrap">
+                        <strong>Step 3: Select 5 Stars & Paste!</strong>
+                        <span>Tap 5 stars and paste your review in Google Maps</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Button -->
+        <button type="button" class="cta-button" id="copy-go-btn">
+            <span>Copy & Go to Google Maps</span> 🚀
+        </button>
+
+        <!-- Seatback Sticker QR Code Box -->
+        <div class="sticker-promo-box">
+            <div class="sticker-promo-info">
+                <span class="sticker-icon">📲</span>
+                <div>
+                    <strong>Seatback QR Code Sticker</strong>
+                    <span>Display inside vehicle for passengers</span>
+                </div>
+            </div>
+            <button type="button" class="view-qr-btn" id="view-qr-btn">View QR</button>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>© BOOK CAB VARANASI • Direct Support: <strong>9838409911</strong></p>
+            <div class="footer-badges">
+                <span class="footer-badge">Airport Taxi</span>
+                <span class="footer-badge">Innova Crysta</span>
+                <span class="footer-badge">Tempo Traveller</span>
+                <span class="footer-badge">Ayodhya Tour</span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- QR Code Seatback Sticker Modal -->
+    <div class="modal-overlay" id="qr-modal" aria-hidden="true">
+        <div class="modal-content">
+            <button type="button" class="close-modal-btn" id="close-modal-btn" aria-label="Close Modal">✕</button>
+            <h3 class="modal-title">Official Google Review QR Code</h3>
+            <p class="modal-subtitle">Print & place on passenger seatback in cab</p>
+
+            <div class="qr-poster-frame">
+                <img src="assets/google-review-qr.png" alt="Book Cab Varanasi Google Review QR Code" class="qr-poster-img">
+            </div>
+
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 12px;">
+                Scan with smartphone camera to open <strong>bookcabvaranasi.vercel.app</strong>
+            </p>
+
+            <button type="button" class="cta-button" style="padding: 12px 16px; font-size: 0.95rem; margin-bottom: 0;" onclick="window.print()">
+                🖨️ Print Seatback Sticker
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification Overlay -->
+    <div class="toast-container" id="toast">
+        <span class="toast-msg">Review copied to clipboard!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/templates.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

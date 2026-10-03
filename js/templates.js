@@ -7,7 +7,7 @@ const SEO_DATA = {
     brandName: "BOOK CAB Varanasi",
     supportPhone: "9838409911",
     supportPhoneFormatted: "+91 98384 09911",
-    googleReviewUrl: "https://search.google.com/local/writereview?placeid=ChIJ05yT8r1vDzkR..._BOOK_CAB_VARANASI", // Default Google Review search URL fallback
+    googleReviewUrl: "https://g.page/r/CYDWAEFVto6xEBM/review",
     
     vehicles: [
         { id: "swift-dzire", name: "Swift Dzire", type: "Sedan (4 Seater)", icon: "🚗" },

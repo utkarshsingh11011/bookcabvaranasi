@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Google Maps Review URL fallback (points to search / review for BOOK CAB Varanasi)
     // Business owners can change this URL or configure custom place ID link.
-    const GOOGLE_MAPS_REVIEW_URL = "https://www.google.com/maps/search/BOOK+CAB+Varanasi+9838409911";
+    const GOOGLE_MAPS_REVIEW_URL = "https://g.page/r/CYDWAEFVto6xEBM/review";
 
     // 1. Populate Dropdowns & Quick Pills
     function initializeSelects() {

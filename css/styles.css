@@ -1,47 +1,63 @@
 /* 
- * Book Cab Varanasi - In-Ride SEO Review Generator
- * Stylesheet (Vanilla CSS3)
- * Design Theme: Sacred Gold & Midnight Indigo (Varanasi Luxury Travel Aesthetic)
+ * BOOK CAB VARANASI - ENTERPRISE LIGHT THEME STYLESHEET
+ * 
+ * SEO Target Keywords System:
+ * [Book Cab Varanasi, cab in varanasi, taxi in varanasi, varanasi to ayodhya cab, 
+ *  varanasi to prayagraj cab, varanasi airport transfer cab, kashi vishwanath darshan taxi]
+ * 
+ * Architecture: Modular Vanilla CSS3 (Custom Properties & Light System Tokens)
  */
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
+/* SEO Design Tokens: Enterprise Light Theme Palette [Book Cab Varanasi] */
 :root {
     --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-    /* Color Palette */
-    --bg-dark: #070A12;
-    --bg-card: rgba(15, 23, 42, 0.78);
-    --bg-card-border: rgba(255, 215, 0, 0.18);
-    --bg-input: rgba(30, 41, 59, 0.7);
-    
-    --gold-primary: #FFD700;
-    --gold-hover: #F59E0B;
-    --gold-light: #FDE68A;
-    --gold-gradient: linear-gradient(135deg, #FFF7AD 0%, #FFAA00 50%, #E67E00 100%);
-    --gold-glow: rgba(255, 215, 0, 0.3);
+    /* Enterprise Light Theme Colors */
+    --bg-page: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F1F5F9;
+    --bg-input: #F8FAFC;
+    --border-color: #E2E8F0;
+    --border-color-strong: #CBD5E1;
 
-    --google-blue: #4285F4;
-    --google-red: #EA4335;
-    --google-yellow: #FBBC05;
-    --google-green: #34A853;
+    /* Brand Palette - Saffron Gold & Royal Indigo */
+    --brand-indigo: #0F172A;
+    --brand-indigo-light: #1E293B;
+    --gold-primary: #D97706;
+    --gold-hover: #B45309;
+    --gold-light: #FEF3C7;
+    --gold-gradient: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+    --gold-glow: rgba(217, 119, 6, 0.2);
 
-    --text-main: #F8FAFC;
-    --text-muted: #94A3B8;
-    --text-gold: #FFE066;
+    /* Status Colors */
+    --google-blue: #2563EB;
+    --google-green: #16A34A;
+    --google-red: #DC2626;
 
-    --radius-sm: 10px;
-    --radius-md: 16px;
-    --radius-lg: 24px;
+    /* Typography */
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --text-light: #475569;
+    --text-gold: #B45309;
+
+    /* Radii & Shadows */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
     --radius-full: 9999px;
 
-    --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.05);
-    --shadow-glow: 0 0 25px rgba(255, 170, 0, 0.4);
+    --shadow-subtle: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    --shadow-elevated: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+    --shadow-glow: 0 0 20px rgba(217, 119, 6, 0.25);
 
-    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Global Reset & Base Setup */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -51,7 +67,7 @@
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg-dark);
+    background-color: var(--bg-page);
     color: var(--text-main);
     line-height: 1.5;
     min-height: 100vh;
@@ -61,28 +77,26 @@ body {
     padding: 0;
     overflow-x: hidden;
     background-image: 
-        radial-gradient(circle at 10% 20%, rgba(255, 170, 0, 0.12) 0%, transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(66, 133, 244, 0.1) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.9) 0%, #070A12 100%);
+        radial-gradient(circle at 15% 15%, rgba(217, 119, 6, 0.04) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(37, 99, 235, 0.03) 0%, transparent 40%);
     background-attachment: fixed;
 }
 
+/* Main Container: Mobile-First Responsive Layout [Book Cab Varanasi] */
 .app-wrapper {
     width: 100%;
-    max-width: 480px;
+    max-width: 500px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     padding: 16px;
     margin: 0 auto;
-    position: relative;
 }
 
-/* Header Section */
+/* Header Section: SEO Title & Support Bar [cab in varanasi, taxi in varanasi] */
 .app-header {
     text-align: center;
-    padding: 20px 12px 16px;
-    position: relative;
+    padding: 16px 8px 14px;
 }
 
 .brand-badge-container {
@@ -90,18 +104,18 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .brand-pill {
-    background: rgba(255, 215, 0, 0.12);
-    border: 1px solid rgba(255, 215, 0, 0.3);
-    color: var(--gold-light);
-    font-size: 0.75rem;
+    background: #FEF3C7;
+    border: 1px solid #FDE68A;
+    color: #92400E;
+    font-size: 0.72rem;
     font-weight: 700;
     padding: 4px 12px;
     border-radius: var(--radius-full);
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
     text-transform: uppercase;
     display: inline-flex;
     align-items: center;
@@ -114,71 +128,63 @@ body {
     height: 6px;
     background: var(--gold-primary);
     border-radius: 50%;
-    box-shadow: 0 0 8px var(--gold-primary);
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.3); }
+    box-shadow: 0 0 6px var(--gold-primary);
 }
 
 .app-title {
     font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 800;
-    color: var(--text-main);
+    color: var(--brand-indigo);
     letter-spacing: -0.5px;
-    line-height: 1.2;
+    line-height: 1.25;
     margin-bottom: 6px;
 }
 
 .app-title span {
-    background: var(--gold-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--gold-primary);
 }
 
 .app-subtitle {
     font-size: 0.875rem;
     color: var(--text-muted);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .support-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(30, 41, 59, 0.5);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 10px 14px;
     margin-top: 14px;
+    box-shadow: var(--shadow-subtle);
 }
 
 .support-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-size: 0.8rem;
     color: var(--text-muted);
 }
 
 .support-info strong {
-    color: var(--text-main);
+    color: var(--brand-indigo);
     display: block;
     font-size: 0.85rem;
 }
 
 .call-btn {
-    background: rgba(52, 168, 83, 0.15);
-    border: 1px solid rgba(52, 168, 83, 0.4);
-    color: #4ADE80;
+    background: rgba(22, 163, 74, 0.1);
+    border: 1px solid rgba(22, 163, 74, 0.25);
+    color: var(--google-green);
     padding: 6px 12px;
     border-radius: var(--radius-full);
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -186,17 +192,15 @@ body {
     transition: var(--transition);
 }
 
-.call-btn:hover, .call-btn:active {
-    background: rgba(52, 168, 83, 0.3);
+.call-btn:hover {
+    background: rgba(22, 163, 74, 0.2);
     transform: translateY(-1px);
 }
 
-/* Card Container Base */
+/* Card Sections: Enterprise Clean Light Aesthetics [varanasi to ayodhya cab] */
 .card-section {
     background: var(--bg-card);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--bg-card-border);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: 20px 18px;
     margin-bottom: 16px;
@@ -207,21 +211,20 @@ body {
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--gold-light);
+    color: var(--brand-indigo);
     margin-bottom: 12px;
     display: flex;
     align-items: center;
     gap: 8px;
-    letter-spacing: -0.2px;
 }
 
 .section-label i {
     font-size: 1.1rem;
 }
 
-/* Input Select Dropdowns */
+/* Form Controls & Custom Selects [innova crysta varanasi, tempo traveller varanasi] */
 .input-group {
-    margin-bottom: 16px;
+    margin-bottom: 14px;
 }
 
 .input-group:last-child {
@@ -230,8 +233,8 @@ body {
 
 .field-label {
     display: block;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: 0.78rem;
+    font-weight: 700;
     color: var(--text-muted);
     margin-bottom: 6px;
     text-transform: uppercase;
@@ -247,11 +250,11 @@ body {
     appearance: none;
     -webkit-appearance: none;
     background-color: var(--bg-input);
-    border: 1.5px solid rgba(255, 215, 0, 0.2);
+    border: 1.5px solid var(--border-color);
     border-radius: var(--radius-md);
     color: var(--text-main);
-    padding: 14px 44px 14px 16px;
-    font-size: 0.95rem;
+    padding: 12px 40px 12px 14px;
+    font-size: 0.92rem;
     font-family: var(--font-body);
     font-weight: 600;
     cursor: pointer;
@@ -261,20 +264,21 @@ body {
 
 .custom-select:focus {
     border-color: var(--gold-primary);
-    box-shadow: 0 0 12px var(--gold-glow);
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
 }
 
 .select-arrow {
     position: absolute;
-    right: 16px;
+    right: 14px;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
-    color: var(--gold-primary);
-    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-size: 0.85rem;
 }
 
-/* Quick Select Pills */
+/* Quick Selection Pills */
 .pills-scroll {
     display: flex;
     gap: 8px;
@@ -289,11 +293,11 @@ body {
 }
 
 .pill-option {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: var(--text-muted);
-    font-size: 0.78rem;
-    font-weight: 500;
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-light);
+    font-size: 0.76rem;
+    font-weight: 600;
     padding: 6px 12px;
     border-radius: var(--radius-full);
     white-space: nowrap;
@@ -302,13 +306,13 @@ body {
 }
 
 .pill-option.active {
-    background: rgba(255, 215, 0, 0.2);
+    background: #FEF3C7;
     border-color: var(--gold-primary);
-    color: var(--gold-light);
+    color: #92400E;
     font-weight: 700;
 }
 
-/* Review Output Card */
+/* Review Generator Component [varanasi airport transfer cab, kashi vishwanath taxi] */
 .review-output-header {
     display: flex;
     align-items: center;
@@ -325,20 +329,19 @@ body {
 .star-rating .star {
     font-size: 1.25rem;
     color: var(--gold-primary);
-    filter: drop-shadow(0 0 4px rgba(255, 215, 0, 0.5));
     transition: transform 0.15s ease;
 }
 
-.star-rating .star:hover, .star-rating .star:active {
-    transform: scale(1.2);
+.star-rating .star:hover {
+    transform: scale(1.15);
 }
 
 .template-tag-badge {
-    background: rgba(66, 133, 244, 0.15);
-    border: 1px solid rgba(66, 133, 244, 0.3);
-    color: #93C5FD;
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    color: #1D4ED8;
     font-size: 0.72rem;
-    font-weight: 600;
+    font-weight: 700;
     padding: 3px 8px;
     border-radius: var(--radius-sm);
 }
@@ -350,8 +353,8 @@ body {
 .review-textarea {
     width: 100%;
     min-height: 120px;
-    background: rgba(15, 23, 42, 0.9);
-    border: 1.5px solid rgba(255, 215, 0, 0.25);
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-color);
     border-radius: var(--radius-md);
     color: var(--text-main);
     padding: 14px;
@@ -365,7 +368,7 @@ body {
 
 .review-textarea:focus {
     border-color: var(--gold-primary);
-    box-shadow: 0 0 14px var(--gold-glow);
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
 }
 
 .review-actions-row {
@@ -376,9 +379,9 @@ body {
 }
 
 .shuffle-btn {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    color: var(--text-main);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--brand-indigo);
     font-size: 0.8rem;
     font-weight: 600;
     padding: 6px 12px;
@@ -390,11 +393,10 @@ body {
     transition: var(--transition);
 }
 
-.shuffle-btn:hover, .shuffle-btn:active {
-    background: rgba(255, 215, 0, 0.2);
+.shuffle-btn:hover {
+    background: #FEF3C7;
     border-color: var(--gold-primary);
-    color: var(--gold-light);
-    transform: rotate(15deg);
+    color: #92400E;
 }
 
 .char-counter {
@@ -402,21 +404,21 @@ body {
     color: var(--text-muted);
 }
 
-/* Instructional Step UI */
+/* Instructional Steps Card [Book Cab Varanasi review guide] */
 .instruction-box {
-    background: linear-gradient(180deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     padding: 18px 16px;
     margin-bottom: 16px;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+    box-shadow: var(--shadow-card);
 }
 
 .instruction-title {
     font-family: var(--font-heading);
     font-size: 1.05rem;
     font-weight: 700;
-    color: var(--gold-light);
+    color: var(--brand-indigo);
     text-align: center;
     margin-bottom: 14px;
     display: flex;
@@ -435,8 +437,8 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    background: rgba(15, 23, 42, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     padding: 10px 14px;
     transition: var(--transition);
@@ -444,15 +446,15 @@ body {
 
 .step-item.active {
     border-color: var(--gold-primary);
-    background: rgba(255, 215, 0, 0.08);
+    background: #FEF3C7;
 }
 
 .step-icon-badge {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: rgba(255, 215, 0, 0.15);
-    border: 1px solid rgba(255, 215, 0, 0.3);
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
     color: var(--gold-primary);
     font-size: 1.1rem;
     display: flex;
@@ -467,7 +469,7 @@ body {
 
 .step-text-wrap strong {
     font-size: 0.88rem;
-    color: var(--text-main);
+    color: var(--brand-indigo);
     display: block;
 }
 
@@ -476,55 +478,31 @@ body {
     color: var(--text-muted);
 }
 
-/* Execute Action Button */
+/* Primary CTA Button [Execute Review Copy & Redirect] */
 .cta-button {
     width: 100%;
     background: var(--gold-gradient);
     border: none;
     border-radius: var(--radius-md);
-    color: #0F172A;
+    color: #FFFFFF;
     font-family: var(--font-heading);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 800;
-    padding: 18px 24px;
+    padding: 16px 24px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    box-shadow: var(--shadow-glow);
+    box-shadow: 0 4px 14px rgba(217, 119, 6, 0.35);
     transition: var(--transition);
-    letter-spacing: -0.2px;
     margin-bottom: 16px;
-    position: relative;
-    overflow: hidden;
 }
 
-.cta-button::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        60deg,
-        transparent 30%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 70%
-    );
-    transform: rotate(30deg);
-    animation: shine 4s infinite;
-}
-
-@keyframes shine {
-    0% { transform: translateX(-100%) rotate(30deg); }
-    20%, 100% { transform: translateX(100%) rotate(30deg); }
-}
-
-.cta-button:hover, .cta-button:active {
-    transform: translateY(-2px);
-    box-shadow: 0 0 35px rgba(255, 170, 0, 0.6);
+.cta-button:hover {
+    background: linear-gradient(135deg, #D97706 0%, #B45309 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(217, 119, 6, 0.45);
 }
 
 .cta-button.loading {
@@ -532,159 +510,19 @@ body {
     pointer-events: none;
 }
 
-/* QR Sticker Modal & Promo Section */
-.sticker-promo-box {
-    background: rgba(30, 41, 59, 0.4);
-    border: 1px dashed rgba(255, 215, 0, 0.3);
-    border-radius: var(--radius-md);
-    padding: 12px 14px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.sticker-promo-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.sticker-icon {
-    font-size: 1.5rem;
-}
-
-.sticker-promo-info strong {
-    font-size: 0.84rem;
-    display: block;
-    color: var(--text-main);
-}
-
-.sticker-promo-info span {
-    font-size: 0.74rem;
-    color: var(--text-muted);
-}
-
-.view-qr-btn {
-    background: rgba(255, 215, 0, 0.15);
-    border: 1px solid var(--gold-primary);
-    color: var(--gold-light);
-    font-size: 0.78rem;
-    font-weight: 700;
-    padding: 6px 12px;
-    border-radius: var(--radius-full);
-    cursor: pointer;
-    white-space: nowrap;
-    transition: var(--transition);
-}
-
-.view-qr-btn:hover {
-    background: var(--gold-primary);
-    color: #0F172A;
-}
-
-/* Modal Overlay */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    padding: 20px;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.modal-content {
-    background: var(--bg-dark);
-    border: 2px solid var(--gold-primary);
-    border-radius: var(--radius-lg);
-    width: 100%;
-    max-width: 380px;
-    padding: 24px 20px;
-    text-align: center;
-    position: relative;
-    box-shadow: var(--shadow-glow);
-    transform: scale(0.9);
-    transition: transform 0.3s ease;
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-}
-
-.close-modal-btn {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--text-main);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.qr-poster-frame {
-    background: #FFFFFF;
-    border-radius: var(--radius-md);
-    padding: 16px;
-    margin: 16px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-}
-
-.qr-poster-img {
-    width: 100%;
-    max-width: 240px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: var(--radius-sm);
-}
-
-.modal-title {
-    font-family: var(--font-heading);
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--gold-light);
-}
-
-.modal-subtitle {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    margin-top: 4px;
-}
-
-/* Toast Notifications */
+/* Toast Notifications [Anti-Duplication Alerts] */
 .toast-container {
     position: fixed;
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%) translateY(100px);
-    background: var(--gold-gradient);
-    color: #0F172A;
-    font-weight: 700;
+    background: var(--brand-indigo);
+    color: #FFFFFF;
+    font-weight: 600;
     font-size: 0.88rem;
     padding: 12px 20px;
     border-radius: var(--radius-full);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: var(--shadow-elevated);
     display: flex;
     align-items: center;
     gap: 8px;
@@ -698,14 +536,18 @@ body {
     opacity: 1;
 }
 
-/* Footer */
+.toast-container.warning {
+    background: #DC2626;
+}
+
+/* Footer Section [SEO Keywords Anchor: cab in varanasi, taxi in varanasi] */
 .app-footer {
     text-align: center;
     margin-top: auto;
     padding: 16px 0 10px;
     font-size: 0.75rem;
     color: var(--text-muted);
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-badges {
@@ -717,9 +559,11 @@ body {
 }
 
 .footer-badge {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--bg-input);
+    border: 1px solid var(--border-color);
     padding: 3px 8px;
     border-radius: 4px;
     color: var(--text-muted);
     font-size: 0.7rem;
+    font-weight: 500;
 }

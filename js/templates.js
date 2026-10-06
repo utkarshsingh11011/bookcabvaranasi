@@ -1,6 +1,12 @@
 /**
- * Book Cab Varanasi - SEO Review Templates Engine
- * Pure Vanilla JS, zero dependencies, edge-optimized.
+ * BOOK CAB VARANASI - SEO REVIEW TEMPLATES & DATA ENGINE
+ * 
+ * SEO Target Keywords Engine:
+ * [Book Cab Varanasi, cab in varanasi, taxi in varanasi, varanasi to ayodhya cab, 
+ *  varanasi to prayagraj cab, varanasi airport transfer cab, kashi vishwanath darshan taxi, 
+ *  innova crysta varanasi, tempo traveller varanasi, ertiga cab varanasi, swift dzire taxi varanasi]
+ * 
+ * Technical Architecture: Vanilla JS (ES6+), Zero External Framework Dependencies
  */
 
 const SEO_DATA = {
@@ -9,6 +15,7 @@ const SEO_DATA = {
     supportPhoneFormatted: "+91 98384 09911",
     googleReviewUrl: "https://g.page/r/CYDWAEFVto6xEBM/review",
     
+    /* SEO Vehicle Roster: [innova crysta varanasi, tempo traveller varanasi, ertiga cab varanasi, swift dzire taxi varanasi, force urbania varanasi] */
     vehicles: [
         { id: "swift-dzire", name: "Swift Dzire", type: "Sedan (4 Seater)", icon: "🚗" },
         { id: "maruti-ertiga", name: "Maruti Ertiga", type: "MPV (6 Seater)", icon: "🚐" },
@@ -17,15 +24,16 @@ const SEO_DATA = {
         { id: "tempo-traveller", name: "Tempo Traveller", type: "Group Traveller (12-26 Seater)", icon: "🚐" }
     ],
 
+    /* SEO High-Value Routes: [varanasi airport transfer cab, varanasi to ayodhya cab, varanasi local sightseeing taxi, varanasi to prayagraj cab, kashi vishwanath darshan taxi] */
     routes: [
-        { id: "airport-transfer", name: "Varanasi Airport Transfer", tag: "Airport Drop & Pick", icon: "✈️" },
+        { id: "airport-transfer", name: "Varanasi Airport Transfer", tag: "Airport Pickup & Drop", icon: "✈️" },
         { id: "ayodhya-tour", name: "Varanasi to Ayodhya", tag: "Outstation Pilgrimage", icon: "🛕" },
         { id: "city-sightseeing", name: "Varanasi Local Sightseeing", tag: "Ghats & City Tour", icon: "🕉️" },
         { id: "prayagraj-trip", name: "Varanasi to Prayagraj", tag: "Triveni Sangam Trip", icon: "🚩" },
         { id: "vishwanath-darshan", name: "Kashi Vishwanath Darshan", tag: "Temple Special", icon: "🔱" }
     ],
 
-    // Approved PRD Dynamic Templates
+    /* SEO Dynamic Review Templates A-E: Algorithmic Natural Permutations for Google Maps Ranking */
     templates: [
         {
             id: "template-a",
@@ -52,16 +60,42 @@ const SEO_DATA = {
             tag: "Tourist Experience",
             template: "Visiting the city was made so easy thanks to BOOK CAB Varanasi. We used their {vehicle} for our {route}. Very reliable, transparent pricing, and excellent local knowledge. Great job!"
         }
-    ]
+    ],
+
+    /* Synonyms & Variation Lexicon for Anti-Duplication Synthesizer */
+    variationLexicon: {
+        openers: [
+            "We had an outstanding",
+            "Had a fantastic experience on our",
+            "Truly enjoyed our journey during the",
+            "An exceptional ride for our",
+            "Highly satisfied with our"
+        ],
+        vehicleDescriptors: [
+            "was spotlessly clean and very comfortable",
+            "was extremely well-maintained and spacious",
+            "was sanitized, fresh, and super comfortable",
+            "had working AC, neat seat covers, and smooth ride",
+            "was super clean and equipped with good AC"
+        ],
+        closers: [
+            "Best transport service in the city!",
+            "Will definitely book with them again.",
+            "Five stars for their top-notch cab service!",
+            "Highly recommended taxi operator in Varanasi.",
+            "Truly 5-star experience from start to finish."
+        ]
+    }
 };
 
 let lastTemplateIndex = -1;
 
 /**
- * Generate an SEO optimized review text
+ * Generate an SEO optimized review text with natural variation logic
+ * SEO Keywords: [cab in varanasi, taxi in varanasi, Book Cab Varanasi]
  * @param {string} vehicleName 
  * @param {string} routeName 
- * @param {number} forceIndex - optional fixed template index
+ * @param {number} forceIndex 
  * @returns {{text: string, templateIndex: number, tag: string}}
  */
 function generateSEOReview(vehicleName, routeName, forceIndex = -1) {
@@ -71,7 +105,6 @@ function generateSEOReview(vehicleName, routeName, forceIndex = -1) {
     if (forceIndex >= 0 && forceIndex < templates.length) {
         chosenIndex = forceIndex;
     } else {
-        // Randomize without repeating the exact same template immediately
         do {
             chosenIndex = Math.floor(Math.random() * templates.length);
         } while (chosenIndex === lastTemplateIndex && templates.length > 1);
@@ -80,7 +113,7 @@ function generateSEOReview(vehicleName, routeName, forceIndex = -1) {
     lastTemplateIndex = chosenIndex;
     const selectedObj = templates[chosenIndex];
 
-    const filledText = selectedObj.template
+    let filledText = selectedObj.template
         .replace(/{vehicle}/g, vehicleName)
         .replace(/{route}/g, routeName);
 
@@ -89,4 +122,17 @@ function generateSEOReview(vehicleName, routeName, forceIndex = -1) {
         templateIndex: chosenIndex,
         tag: selectedObj.tag
     };
+}
+
+/**
+ * Generate a guaranteed unique variation when anti-duplication filter triggers
+ * SEO Keywords: [varanasi to ayodhya cab, varanasi airport transfer cab, kashi vishwanath darshan taxi]
+ */
+function generateUniqueVariation(vehicleName, routeName) {
+    const lex = SEO_DATA.variationLexicon;
+    const randomOpener = lex.openers[Math.floor(Math.random() * lex.openers.length)];
+    const randomDesc = lex.vehicleDescriptors[Math.floor(Math.random() * lex.vehicleDescriptors.length)];
+    const randomCloser = lex.closers[Math.floor(Math.random() * lex.closers.length)];
+
+    return `${randomOpener} ${routeName} with BOOK CAB Varanasi. Our ${vehicleName} ${randomDesc}. The driver was polite, punctual, and drove safely. ${randomCloser}`;
 }
